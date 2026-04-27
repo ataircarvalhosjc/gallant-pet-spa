@@ -1020,6 +1020,273 @@
       .videos-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
     }
 
+    /* =========================================
+       TÁXI DOG
+    ========================================= */
+    #taxidog {
+      padding: 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .taxidog-hero {
+      background: linear-gradient(135deg, #0a0c1e 0%, var(--color-primary) 45%, #2a0a5e 100%);
+      padding: 100px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ondas decorativas no fundo */
+    .taxidog-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 80% 50%, rgba(106,13,173,0.35) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 60% at 10% 80%, rgba(212,175,55,0.12) 0%, transparent 70%);
+    }
+
+    .taxidog-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Coluna de texto */
+    .taxidog-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,175,55,0.12);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--color-accent);
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .taxidog-title {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .taxidog-title span { color: var(--color-accent); }
+
+    .taxidog-desc {
+      color: rgba(255,255,255,0.72);
+      font-size: 1rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      max-width: 480px;
+    }
+
+    /* Features */
+    .taxidog-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .taxidog-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .taxidog-feature:hover {
+      background: rgba(255,255,255,0.09);
+      border-color: rgba(212,175,55,0.25);
+    }
+
+    .taxidog-feature-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      color: var(--color-accent);
+    }
+
+    .taxidog-feature-text strong {
+      display: block;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--color-white);
+      margin-bottom: 3px;
+    }
+
+    .taxidog-feature-text span {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.50);
+      line-height: 1.4;
+    }
+
+    /* Card visual lado direito */
+    .taxidog-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .taxidog-card-big {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 28px;
+      padding: 40px 32px;
+      text-align: center;
+      width: 100%;
+      max-width: 380px;
+      position: relative;
+      backdrop-filter: blur(8px);
+    }
+
+    .taxidog-car-icon {
+      width: 96px;
+      height: 96px;
+      background: linear-gradient(135deg, var(--color-accent), #b8942a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.4rem;
+      color: var(--color-primary);
+      margin: 0 auto 24px;
+      box-shadow: 0 12px 40px rgba(212,175,55,0.40);
+      animation: carBounce 3s ease-in-out infinite;
+    }
+
+    @keyframes carBounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .taxidog-card-title {
+      font-family: var(--font-title);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 8px;
+    }
+
+    .taxidog-card-sub {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.88rem;
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .taxidog-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      text-align: left;
+      margin-bottom: 28px;
+    }
+
+    .taxidog-step {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .taxidog-step-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.40);
+      color: var(--color-accent);
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .taxidog-step span {
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .taxidog-price-tag {
+      background: rgba(212,175,55,0.10);
+      border: 1px solid rgba(212,175,55,0.25);
+      border-radius: var(--radius-sm);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .taxidog-price-label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.50);
+    }
+
+    .taxidog-price-value {
+      font-family: var(--font-title);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-accent);
+    }
+
+    /* Floating badges no visual */
+    .taxidog-chips {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .taxidog-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: rgba(13,15,46,0.70);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-full);
+      padding: 7px 14px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-white);
+    }
+
+    .taxidog-chip i { color: var(--color-accent); }
+
+    @media (max-width: 1024px) {
+      .taxidog-inner { grid-template-columns: 1fr; gap: 48px; }
+      .taxidog-visual { order: -1; }
+      .taxidog-float-1, .taxidog-float-2 { display: none; }
+    }
+
+    @media (max-width: 480px) {
+      .taxidog-features { grid-template-columns: 1fr; }
+    }
+
     #produtos .section-title { color: var(--color-white); }
     #produtos .section-subtitle { color: rgba(255,255,255,0.60); }
 
@@ -1462,6 +1729,190 @@
     }
 
     /* =========================================
+       MODAL PIX
+    ========================================= */
+    .pix-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(6px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .pix-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .pix-modal {
+      background: #1a1a2e;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 20px;
+      width: 100%;
+      max-width: 440px;
+      padding: 32px;
+      position: relative;
+      transform: translateY(24px) scale(0.97);
+      transition: transform 0.3s ease;
+    }
+
+    .pix-backdrop.open .pix-modal {
+      transform: translateY(0) scale(1);
+    }
+
+    .pix-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: rgba(255,255,255,0.08);
+      border: none;
+      color: rgba(255,255,255,0.60);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .pix-close:hover { background: rgba(255,255,255,0.15); color: #fff; }
+
+    .pix-title {
+      font-family: var(--font-title);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-white);
+      margin-bottom: 6px;
+    }
+
+    .pix-subtitle {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .pix-subtitle strong { color: rgba(255,255,255,0.85); }
+
+    .pix-row {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+    }
+
+    .pix-row-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 6px;
+    }
+
+    .pix-row-value {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--color-white);
+    }
+
+    .pix-price-value {
+      font-size: 1.4rem;
+      color: var(--color-accent);
+      font-family: var(--font-title);
+    }
+
+    .pix-copy-btn {
+      width: 100%;
+      padding: 13px;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.20);
+      border-radius: 8px;
+      color: var(--color-white);
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background var(--transition), border-color var(--transition);
+    }
+
+    .pix-copy-btn:hover { background: rgba(255,255,255,0.07); border-color: rgba(255,255,255,0.35); }
+    .pix-copy-btn.copied { border-color: var(--color-whatsapp); color: var(--color-whatsapp); }
+
+    .pix-steps {
+      margin: 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .pix-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+
+    .pix-step-num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.60);
+      font-size: 0.70rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pix-confirm-btn {
+      width: 100%;
+      padding: 15px;
+      background: var(--color-white);
+      border: none;
+      border-radius: 10px;
+      color: #111;
+      font-family: var(--font-body);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      transition: background var(--transition), transform var(--transition);
+    }
+
+    .pix-confirm-btn:hover { background: #e8e8e8; transform: translateY(-1px); }
+    .pix-confirm-btn i { font-size: 1.1rem; }
+
+    /* =========================================
        SCROLL TO TOP
     ========================================= */
     .scroll-top {
@@ -1897,6 +2348,119 @@
 
 
   <!-- =========================================
+       TÁXI DOG
+  ========================================= -->
+  <section id="taxidog">
+    <div class="taxidog-hero">
+      <div class="container">
+        <div class="taxidog-inner">
+
+          <!-- Coluna de texto -->
+          <div class="fade-in">
+            <div class="taxidog-tag">
+              <i class="fa-solid fa-car"></i> Táxi Dog
+            </div>
+            <h2 class="taxidog-title">
+              Seu pet vai e volta<br />com <span>segurança e conforto</span>
+            </h2>
+            <p class="taxidog-desc">
+              Chega de preocupação! Nosso serviço de Táxi Dog busca e leva o seu pet com todo o cuidado que ele merece — motorista experiente, veículo higienizado e muito carinho durante todo o trajeto.
+            </p>
+
+            <div class="taxidog-features">
+              <div class="taxidog-feature">
+                <div class="taxidog-feature-icon">
+                  <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="taxidog-feature-text">
+                  <strong>Segurança total</strong>
+                  <span>Pet transportado com cinto e caixa de transporte</span>
+                </div>
+              </div>
+              <div class="taxidog-feature">
+                <div class="taxidog-feature-icon">
+                  <i class="fa-solid fa-spray-can-sparkles"></i>
+                </div>
+                <div class="taxidog-feature-text">
+                  <strong>Veículo higienizado</strong>
+                  <span>Limpeza e higienização a cada atendimento</span>
+                </div>
+              </div>
+              <div class="taxidog-feature">
+                <div class="taxidog-feature-icon">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="taxidog-feature-text">
+                  <strong>Pontualidade</strong>
+                  <span>Horário agendado respeitado sem atrasos</span>
+                </div>
+              </div>
+              <div class="taxidog-feature">
+                <div class="taxidog-feature-icon">
+                  <i class="fa-solid fa-heart"></i>
+                </div>
+                <div class="taxidog-feature-text">
+                  <strong>Mimo garantido</strong>
+                  <span>Seu pet recebe atenção e carinho no trajeto</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Coluna visual -->
+          <div class="taxidog-visual fade-in fade-in-delay-2">
+
+            <div class="taxidog-card-big">
+              <div class="taxidog-chips">
+                <div class="taxidog-chip"><i class="fa-brands fa-whatsapp"></i> Agendamento pelo WhatsApp</div>
+                <div class="taxidog-chip"><i class="fa-solid fa-star"></i> Atendimento personalizado</div>
+              </div>
+              <div class="taxidog-car-icon">
+                <i class="fa-solid fa-car-side"></i>
+              </div>
+              <div class="taxidog-card-title">Como funciona</div>
+              <div class="taxidog-card-sub">Simples, rápido e sem complicação</div>
+
+              <div class="taxidog-steps">
+                <div class="taxidog-step">
+                  <div class="taxidog-step-num">1</div>
+                  <span>Você agenda via WhatsApp com data e endereço</span>
+                </div>
+                <div class="taxidog-step">
+                  <div class="taxidog-step-num">2</div>
+                  <span>Buscamos seu pet no horário combinado</span>
+                </div>
+                <div class="taxidog-step">
+                  <div class="taxidog-step-num">3</div>
+                  <span>Seu pet é atendido com todo o carinho na Gallant</span>
+                </div>
+                <div class="taxidog-step">
+                  <div class="taxidog-step-num">4</div>
+                  <span>Devolvemos fresquinho e feliz na sua porta</span>
+                </div>
+              </div>
+
+              <div class="taxidog-price-tag">
+                <span class="taxidog-price-label">Consulte o valor por região</span>
+                <span class="taxidog-price-value">Sob consulta</span>
+              </div>
+
+              <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+saber+o+valor+do+T%C3%A1xi+Dog+para+minha+regi%C3%A3o%21"
+                 class="btn btn-accent" style="width:100%; justify-content:center;" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-location-dot"></i>
+                Consultar valor na minha região
+              </a>
+            </div>
+
+          </div><!-- /taxidog-visual -->
+        </div><!-- /taxidog-inner -->
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
        GALERIA
   ========================================= -->
   <section id="galeria">
@@ -2002,10 +2566,9 @@
               <span class="produto-preco">R$ 129,90</span>
             </div>
             <div class="produto-parcelas">ou 3x de R$ 43,30 sem juros</div>
-            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+o+Kit+Pet+M%C3%A9dio+Completo+por+R%24+129%2C90.+Vi+no+site%21"
-               class="produto-btn" target="_blank" rel="noopener noreferrer">
+            <button class="produto-btn" onclick="abrirPix('Kit Pet Médio Completo','R$ 129,90')">
               <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-            </a>
+            </button>
           </div>
         </div>
 
@@ -2024,10 +2587,9 @@
               <span class="produto-preco">R$ 64,90</span>
             </div>
             <div class="produto-parcelas">ou 2x de R$ 32,45 sem juros</div>
-            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+o+Peitoral+%2B+Guia+Anti-choque+por+R%24+64%2C90.+Vi+no+site%21"
-               class="produto-btn" target="_blank" rel="noopener noreferrer">
+            <button class="produto-btn" onclick="abrirPix('Peitoral + Guia Anti-choque','R$ 64,90')">
               <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-            </a>
+            </button>
           </div>
         </div>
 
@@ -2046,10 +2608,9 @@
               <span class="produto-preco">R$ 89,90</span>
             </div>
             <div class="produto-parcelas">ou 3x de R$ 29,97 sem juros</div>
-            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+a+Mochilinha+Peitoral+DUOMM+por+R%24+89%2C90.+Vi+no+site%21"
-               class="produto-btn" target="_blank" rel="noopener noreferrer">
+            <button class="produto-btn" onclick="abrirPix('Mochilinha Peitoral DUOMM','R$ 89,90')">
               <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-            </a>
+            </button>
           </div>
         </div>
 
@@ -2067,10 +2628,9 @@
               <span class="produto-preco">R$ 49,90</span>
             </div>
             <div class="produto-parcelas">ou 2x de R$ 24,95 sem juros</div>
-            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+o+Kit+Acess%C3%B3rios+Premium+por+R%24+49%2C90.+Vi+no+site%21"
-               class="produto-btn" target="_blank" rel="noopener noreferrer">
+            <button class="produto-btn" onclick="abrirPix('Kit Acessórios Premium','R$ 49,90')">
               <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
-            </a>
+            </button>
           </div>
         </div>
 
@@ -2265,6 +2825,53 @@
 
 
   <!-- =========================================
+       MODAL PIX
+  ========================================= -->
+  <div class="pix-backdrop" id="pixBackdrop" role="dialog" aria-modal="true" aria-labelledby="pixTitle">
+    <div class="pix-modal">
+      <button class="pix-close" id="pixClose" aria-label="Fechar"><i class="fa-solid fa-xmark"></i></button>
+
+      <div class="pix-title">Você está quase lá!</div>
+      <div class="pix-subtitle">Para reservar seu <strong id="pixProductName">produto</strong>, siga os passos abaixo:</div>
+
+      <div class="pix-row">
+        <div class="pix-row-label">Valor</div>
+        <div class="pix-row-value pix-price-value" id="pixPrice">R$ 0,00</div>
+      </div>
+
+      <div class="pix-row">
+        <div class="pix-row-label">Chave PIX</div>
+        <div class="pix-row-value">(12) 98180-6712</div>
+        <div style="font-size:0.82rem; color:rgba(255,255,255,0.45); margin-top:4px;">Juliana de Paula Cruz Silva</div>
+      </div>
+
+      <button class="pix-copy-btn" id="pixCopyBtn">
+        <i class="fa-regular fa-copy"></i> Copiar Chave PIX
+      </button>
+
+      <div class="pix-steps">
+        <div class="pix-step">
+          <div class="pix-step-num">1</div>
+          <span>Faça o PIX no valor do produto para a chave acima.</span>
+        </div>
+        <div class="pix-step">
+          <div class="pix-step-num">2</div>
+          <span>Clique em "Confirmar via WhatsApp" abaixo.</span>
+        </div>
+        <div class="pix-step">
+          <div class="pix-step-num">3</div>
+          <span>Envie o comprovante de pagamento pelo WhatsApp para confirmar sua reserva.</span>
+        </div>
+      </div>
+
+      <a id="pixConfirmBtn" href="#" class="pix-confirm-btn" target="_blank" rel="noopener noreferrer">
+        <i class="fa-brands fa-whatsapp"></i> Confirmar via WhatsApp
+      </a>
+    </div>
+  </div>
+
+
+  <!-- =========================================
        BOTÃO WHATSAPP FLUTUANTE
   ========================================= -->
   <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21"
@@ -2413,6 +3020,48 @@
         ? requestAnimationFrame(tick)
         : images[0].addEventListener('load', () => requestAnimationFrame(tick));
     })();
+
+    /* ---------- Modal PIX ---------- */
+    const pixBackdrop  = document.getElementById('pixBackdrop');
+    const pixClose     = document.getElementById('pixClose');
+    const pixProductEl = document.getElementById('pixProductName');
+    const pixPriceEl   = document.getElementById('pixPrice');
+    const pixCopyBtn   = document.getElementById('pixCopyBtn');
+    const pixConfirmBtn = document.getElementById('pixConfirmBtn');
+    const PIX_KEY      = '12981806712';
+
+    function abrirPix(produto, preco) {
+      pixProductEl.textContent = produto;
+      pixPriceEl.textContent   = preco;
+      const msg = encodeURIComponent(
+        `Olá! Acabei de fazer o PIX referente ao produto "${produto}" (${preco}). Segue o comprovante!`
+      );
+      pixConfirmBtn.href = `https://wa.me/5512981806712?text=${msg}`;
+      pixBackdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function fecharPix() {
+      pixBackdrop.classList.remove('open');
+      document.body.style.overflow = '';
+      pixCopyBtn.classList.remove('copied');
+      pixCopyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Chave PIX';
+    }
+
+    pixClose.addEventListener('click', fecharPix);
+    pixBackdrop.addEventListener('click', (e) => { if (e.target === pixBackdrop) fecharPix(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') fecharPix(); });
+
+    pixCopyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(PIX_KEY).then(() => {
+        pixCopyBtn.classList.add('copied');
+        pixCopyBtn.innerHTML = '<i class="fa-solid fa-check"></i> Chave copiada!';
+        setTimeout(() => {
+          pixCopyBtn.classList.remove('copied');
+          pixCopyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copiar Chave PIX';
+        }, 2500);
+      });
+    });
   </script>
 
 </body>
