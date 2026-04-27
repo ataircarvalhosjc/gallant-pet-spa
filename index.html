@@ -981,41 +981,6 @@
       pointer-events: none;
     }
 
-    /* =========================================
-       VÍDEOS
-    ========================================= */
-    #videos {
-      padding: 100px 0;
-      background: var(--color-bg-light);
-    }
-
-    .videos-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .video-card {
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      background: #000;
-    }
-
-    .video-wrap {
-      position: relative;
-      padding-bottom: 177.78%; /* 9:16 para Shorts */
-      height: 0;
-    }
-
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-
     @media (max-width: 768px) {
       .videos-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
     }
@@ -1280,6 +1245,8 @@
     @media (max-width: 1024px) {
       .taxidog-inner { grid-template-columns: 1fr; gap: 48px; }
       .taxidog-float-1, .taxidog-float-2 { display: none; }
+      .taxidog-inner > div:first-child { order: 1; }
+      .taxidog-visual { order: 2; }
     }
 
     @media (max-width: 480px) {
