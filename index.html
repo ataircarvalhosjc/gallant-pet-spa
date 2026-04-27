@@ -1695,6 +1695,273 @@
     }
 
     /* =========================================
+       AGENDAMENTO BANHO & TOSA
+    ========================================= */
+    #agendamento {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--color-bg-light) 0%, #ede9fb 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #agendamento::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -120px;
+      width: 420px; height: 420px;
+      background: radial-gradient(circle, rgba(106,13,173,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    #agendamento::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -80px;
+      width: 320px; height: 320px;
+      background: radial-gradient(circle, rgba(212,175,55,0.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .agend-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 64px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* — Coluna esquerda — */
+    .agend-info-title {
+      font-family: var(--font-title);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .agend-info-title span { color: var(--color-secondary); }
+
+    .agend-info-desc {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.75;
+      margin-bottom: 32px;
+    }
+
+    .agend-info-items {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .agend-info-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.88rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    .agend-info-item i {
+      width: 34px; height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      color: var(--color-accent);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    .agend-notice {
+      margin-top: 28px;
+      background: rgba(37,211,102,0.08);
+      border: 1px solid rgba(37,211,102,0.25);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: #2a7a4b;
+      font-weight: 500;
+    }
+
+    .agend-notice i { color: var(--color-whatsapp); font-size: 1.1rem; }
+
+    /* — Formulário — */
+    .agend-form {
+      background: var(--color-white);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 12px 48px rgba(27,31,94,0.10);
+      border: 1px solid rgba(27,31,94,0.06);
+    }
+
+    .agend-form-title {
+      font-family: var(--font-title);
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 28px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--color-bg-light);
+    }
+
+    .agend-section-label {
+      font-size: 0.70rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-secondary);
+      margin: 24px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .agend-section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(106,13,173,0.12);
+    }
+
+    .agend-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .agend-row.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .agend-row.full   { grid-template-columns: 1fr; }
+
+    .agend-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .agend-field label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-primary);
+    }
+
+    .agend-field label span { color: #e53; }
+
+    .agend-field input,
+    .agend-field select,
+    .agend-field textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid #e0ddf0;
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--color-text);
+      background: #fafaf e;
+      transition: border-color var(--transition), box-shadow var(--transition);
+      outline: none;
+      -webkit-appearance: none;
+    }
+
+    .agend-field input:focus,
+    .agend-field select:focus,
+    .agend-field textarea:focus {
+      border-color: var(--color-secondary);
+      box-shadow: 0 0 0 3px rgba(106,13,173,0.10);
+    }
+
+    .agend-field textarea { resize: vertical; min-height: 90px; }
+
+    /* Espécie — toggle visual */
+    .especie-toggle {
+      display: flex;
+      gap: 10px;
+    }
+
+    .especie-btn {
+      flex: 1;
+      padding: 10px;
+      border: 1.5px solid #e0ddf0;
+      border-radius: 10px;
+      background: #fafaff;
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: #888;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      transition: var(--transition);
+    }
+
+    .especie-btn.active {
+      border-color: var(--color-secondary);
+      background: rgba(106,13,173,0.07);
+      color: var(--color-secondary);
+    }
+
+    .agend-submit {
+      width: 100%;
+      margin-top: 24px;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--color-whatsapp), #1aa855);
+      border: none;
+      border-radius: var(--radius-full);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.35);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .agend-submit::after {
+      content: '';
+      position: absolute;
+      top: -50%; left: -60%;
+      width: 40%; height: 200%;
+      background: rgba(255,255,255,0.20);
+      transform: skewX(-20deg);
+      animation: shimmer 2.4s infinite;
+    }
+
+    .agend-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.50);
+    }
+
+    .agend-submit-note {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #999;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 1024px) {
+      .agend-layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+
+    @media (max-width: 600px) {
+      .agend-form { padding: 24px 18px; }
+      .agend-row { grid-template-columns: 1fr; }
+      .agend-row.cols-3 { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* =========================================
        MODAL PIX
     ========================================= */
     .pix-backdrop {
@@ -1972,6 +2239,7 @@
           <li><a href="#galeria">Galeria</a></li>
           <li><a href="#videos">Vídeos</a></li>
           <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#agendamento">Agendar</a></li>
           <li><a href="#contato">Contato</a></li>
           <li>
             <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+agendar+um+hor%C3%A1rio%21"
@@ -2606,6 +2874,230 @@
 
 
   <!-- =========================================
+       AGENDAMENTO BANHO & TOSA
+  ========================================= -->
+  <section id="agendamento">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">Agende online</span>
+        <h2 class="section-title">Banho & Tosa</h2>
+        <p class="section-subtitle">Preencha o formulário e receba a confirmação pelo WhatsApp</p>
+      </div>
+
+      <div class="agend-layout">
+
+        <!-- Coluna info -->
+        <div class="fade-in">
+          <h3 class="agend-info-title">Cuidado com<br /><span>amor e carinho</span></h3>
+          <p class="agend-info-desc">
+            Na Gallant, cada pet é tratado de forma única. Nosso agendamento online é simples — basta preencher as informações do seu pet e enviaremos a confirmação pelo WhatsApp!
+          </p>
+          <div class="agend-info-items">
+            <div class="agend-info-item">
+              <i class="fa-solid fa-scissors"></i>
+              Banho, tosa e hidratação com produtos premium
+            </div>
+            <div class="agend-info-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              Ambiente seguro, higienizado e climatizado
+            </div>
+            <div class="agend-info-item">
+              <i class="fa-solid fa-clock"></i>
+              Horários flexíveis de segunda a sábado
+            </div>
+            <div class="agend-info-item">
+              <i class="fa-solid fa-car"></i>
+              Táxi Dog disponível para busca e entrega
+            </div>
+            <div class="agend-info-item">
+              <i class="fa-solid fa-rainbow"></i>
+              Cromoterapia e musicoterapia inclusa
+            </div>
+          </div>
+          <div class="agend-notice">
+            <i class="fa-brands fa-whatsapp"></i>
+            Confirmação em até <strong>&nbsp;1 hora&nbsp;</strong> pelo WhatsApp após o envio!
+          </div>
+        </div>
+
+        <!-- Formulário -->
+        <div class="fade-in fade-in-delay-2">
+          <form class="agend-form" id="agendForm" onsubmit="enviarAgendamento(event)">
+            <div class="agend-form-title">📋 Dados para Agendamento</div>
+
+            <!-- TUTOR -->
+            <div class="agend-section-label"><i class="fa-solid fa-user"></i> Dados do Tutor</div>
+            <div class="agend-row">
+              <div class="agend-field">
+                <label>Nome completo <span>*</span></label>
+                <input type="text" id="ag-nome" placeholder="Seu nome" required />
+              </div>
+              <div class="agend-field">
+                <label>WhatsApp <span>*</span></label>
+                <input type="tel" id="ag-tel" placeholder="(12) 99999-9999" required />
+              </div>
+            </div>
+
+            <!-- PET -->
+            <div class="agend-section-label"><i class="fa-solid fa-paw"></i> Dados do Pet</div>
+            <div class="agend-row">
+              <div class="agend-field">
+                <label>Nome do pet <span>*</span></label>
+                <input type="text" id="ag-pet" placeholder="Nome do seu pet" required />
+              </div>
+              <div class="agend-field">
+                <label>Espécie <span>*</span></label>
+                <div class="especie-toggle">
+                  <button type="button" class="especie-btn active" id="btnCao" onclick="selecionarEspecie('Cão')">
+                    🐶 Cão
+                  </button>
+                  <button type="button" class="especie-btn" id="btnGato" onclick="selecionarEspecie('Gato')">
+                    🐱 Gato
+                  </button>
+                </div>
+                <input type="hidden" id="ag-especie" value="Cão" />
+              </div>
+            </div>
+
+            <div class="agend-row">
+              <div class="agend-field">
+                <label>Raça <span>*</span></label>
+                <input type="text" id="ag-raca" placeholder="Ex: Shih Tzu, Poodle..." required />
+              </div>
+              <div class="agend-field">
+                <label>Porte <span>*</span></label>
+                <select id="ag-porte" required>
+                  <option value="">Selecione...</option>
+                  <option value="Pequeno (até 10kg)">Pequeno (até 10kg)</option>
+                  <option value="Médio (10 a 25kg)">Médio (10 a 25kg)</option>
+                  <option value="Grande (25 a 45kg)">Grande (25 a 45kg)</option>
+                  <option value="Gigante (acima de 45kg)">Gigante (acima de 45kg)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="agend-row cols-3">
+              <div class="agend-field">
+                <label>Idade aproximada</label>
+                <select id="ag-idade">
+                  <option value="">Selecione...</option>
+                  <option value="Filhote (menos de 1 ano)">Filhote (- de 1 ano)</option>
+                  <option value="Jovem (1 a 3 anos)">Jovem (1 a 3 anos)</option>
+                  <option value="Adulto (3 a 8 anos)">Adulto (3 a 8 anos)</option>
+                  <option value="Sênior (acima de 8 anos)">Sênior (+ de 8 anos)</option>
+                </select>
+              </div>
+              <div class="agend-field">
+                <label>Pelagem</label>
+                <select id="ag-pelagem">
+                  <option value="">Selecione...</option>
+                  <option value="Curta">Curta</option>
+                  <option value="Média">Média</option>
+                  <option value="Longa">Longa</option>
+                  <option value="Crespa / Encaracolada">Crespa / Encaracolada</option>
+                  <option value="Dupla camada">Dupla camada</option>
+                </select>
+              </div>
+              <div class="agend-field">
+                <label>Peso aprox.</label>
+                <input type="text" id="ag-peso" placeholder="Ex: 8kg" />
+              </div>
+            </div>
+
+            <!-- SERVIÇO -->
+            <div class="agend-section-label"><i class="fa-solid fa-star"></i> Serviço Desejado</div>
+            <div class="agend-row">
+              <div class="agend-field">
+                <label>Serviço principal <span>*</span></label>
+                <select id="ag-servico" required>
+                  <option value="">Selecione...</option>
+                  <option value="Banho Simples">Banho Simples</option>
+                  <option value="Banho + Tosa Higiênica">Banho + Tosa Higiênica</option>
+                  <option value="Banho + Tosa Completa">Banho + Tosa Completa</option>
+                  <option value="Tosa na Tesoura">Tosa na Tesoura</option>
+                  <option value="Tosa na Máquina">Tosa na Máquina</option>
+                  <option value="Baby Spa">Baby Spa</option>
+                  <option value="Spa Patas">Spa Patas</option>
+                  <option value="Cromoterapia + Banho">Cromoterapia + Banho</option>
+                </select>
+              </div>
+              <div class="agend-field">
+                <label>Serviços adicionais</label>
+                <select id="ag-extras">
+                  <option value="">Nenhum</option>
+                  <option value="Hidratação">Hidratação</option>
+                  <option value="Limpeza de ouvidos">Limpeza de ouvidos</option>
+                  <option value="Corte de unhas">Corte de unhas</option>
+                  <option value="Hidratação + Limpeza de ouvidos">Hidratação + Limpeza de ouvidos</option>
+                  <option value="Pacote completo (hidratação + ouvidos + unhas)">Pacote completo</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- DATA / HORA -->
+            <div class="agend-section-label"><i class="fa-regular fa-calendar"></i> Data e Horário</div>
+            <div class="agend-row">
+              <div class="agend-field">
+                <label>Data preferida <span>*</span></label>
+                <input type="date" id="ag-data" required />
+              </div>
+              <div class="agend-field">
+                <label>Horário preferido <span>*</span></label>
+                <select id="ag-hora" required>
+                  <option value="">Selecione...</option>
+                  <option value="08:00">08:00</option>
+                  <option value="09:00">09:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                  <option value="16:00">16:00</option>
+                  <option value="17:00">17:00</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- SAÚDE -->
+            <div class="agend-section-label"><i class="fa-solid fa-heart-pulse"></i> Saúde e Comportamento</div>
+            <div class="agend-row">
+              <div class="agend-field">
+                <label>Alergias ou restrições</label>
+                <input type="text" id="ag-alergias" placeholder="Ex: alergia a produtos com perfume" />
+              </div>
+              <div class="agend-field">
+                <label>Comportamento</label>
+                <select id="ag-comportamento">
+                  <option value="Tranquilo">Tranquilo 😌</option>
+                  <option value="Agitado">Agitado 😅</option>
+                  <option value="Agressivo com estranhos">Agressivo com estranhos ⚠️</option>
+                  <option value="Ansioso / medroso">Ansioso / medroso 😨</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="agend-row full">
+              <div class="agend-field">
+                <label>Observações gerais</label>
+                <textarea id="ag-obs" placeholder="Informações extras: medicamentos em uso, preferências de corte, estilo de tosa desejado..."></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="agend-submit">
+              <i class="fa-brands fa-whatsapp"></i>
+              Enviar Agendamento pelo WhatsApp
+            </button>
+            <p class="agend-submit-note">Você será redirecionado para o WhatsApp com todas as informações preenchidas.</p>
+          </form>
+        </div>
+
+      </div><!-- /agend-layout -->
+    </div>
+  </section>
+
+
+  <!-- =========================================
        CONTATO
   ========================================= -->
   <section id="contato">
@@ -2986,6 +3478,65 @@
         ? requestAnimationFrame(tick)
         : images[0].addEventListener('load', () => requestAnimationFrame(tick));
     })();
+
+    /* ---------- Agendamento — Espécie toggle ---------- */
+    function selecionarEspecie(valor) {
+      document.getElementById('ag-especie').value = valor;
+      document.getElementById('btnCao').classList.toggle('active', valor === 'Cão');
+      document.getElementById('btnGato').classList.toggle('active', valor === 'Gato');
+    }
+
+    /* ---------- Agendamento — Data mínima = hoje ---------- */
+    const agDataInput = document.getElementById('ag-data');
+    if (agDataInput) {
+      const hoje = new Date().toISOString().split('T')[0];
+      agDataInput.setAttribute('min', hoje);
+    }
+
+    /* ---------- Agendamento — Enviar via WhatsApp ---------- */
+    function enviarAgendamento(e) {
+      e.preventDefault();
+      const v = (id) => document.getElementById(id)?.value.trim() || '';
+
+      const linhas = [
+        '🐾 *AGENDAMENTO — GALLANT PET & SPA*',
+        '',
+        '👤 *TUTOR*',
+        `• Nome: ${v('ag-nome')}`,
+        `• WhatsApp: ${v('ag-tel')}`,
+        '',
+        '🐶 *PET*',
+        `• Nome: ${v('ag-pet')}`,
+        `• Espécie: ${v('ag-especie')}`,
+        `• Raça: ${v('ag-raca')}`,
+        `• Porte: ${v('ag-porte')}`,
+        v('ag-idade')       ? `• Idade: ${v('ag-idade')}` : '',
+        v('ag-pelagem')     ? `• Pelagem: ${v('ag-pelagem')}` : '',
+        v('ag-peso')        ? `• Peso: ${v('ag-peso')}` : '',
+        '',
+        '✂️ *SERVIÇO*',
+        `• Principal: ${v('ag-servico')}`,
+        v('ag-extras') && v('ag-extras') !== 'Nenhum' ? `• Adicionais: ${v('ag-extras')}` : '',
+        '',
+        '📅 *DATA E HORÁRIO*',
+        `• Data: ${formatarData(v('ag-data'))}`,
+        `• Horário: ${v('ag-hora')}`,
+        '',
+        '❤️ *SAÚDE E COMPORTAMENTO*',
+        `• Comportamento: ${v('ag-comportamento')}`,
+        v('ag-alergias') ? `• Alergias/Restrições: ${v('ag-alergias')}` : '',
+        v('ag-obs')      ? `• Observações: ${v('ag-obs')}` : '',
+      ].filter(Boolean).join('\n');
+
+      const url = `https://wa.me/5512981806712?text=${encodeURIComponent(linhas)}`;
+      window.open(url, '_blank');
+    }
+
+    function formatarData(iso) {
+      if (!iso) return '—';
+      const [y, m, d] = iso.split('-');
+      return `${d}/${m}/${y}`;
+    }
 
     /* ---------- Modal PIX ---------- */
     const pixBackdrop  = document.getElementById('pixBackdrop');
