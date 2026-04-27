@@ -1,0 +1,252 @@
+{
+  "task": "Criar um site completo e profissional para a empresa Gallant Pet & Spa",
+  "output": {
+    "file": "index.html",
+    "tipo": "Single-page HTML com CSS e JavaScript embutidos (sem dependências externas além de Google Fonts e Font Awesome via CDN)"
+  },
+  "empresa": {
+    "nome": "Gallant Pet & Spa",
+    "slogan": "Um lugar para você e para seu melhor amigo 🐾",
+    "instagram": "@gallantpetespa",
+    "whatsapp": "+5512981806712",
+    "whatsapp_link": "https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21",
+    "endereco": "Avenida São Jorge, nº 1753 - Cidade Salvador, Jacareí - SP, 12312-000",
+    "google_maps_link": "https://maps.google.com/?q=Avenida+São+Jorge+1753+Cidade+Salvador+Jacareí+SP",
+    "instagram_link": "https://www.instagram.com/gallantpetespa"
+  },
+  "design": {
+    "estilo": "Moderno, elegante e aconchegante — transmite sofisticação e amor pelos animais",
+    "paleta_de_cores": {
+      "primaria": "#1B1F5E",
+      "secundaria": "#6A0DAD",
+      "destaque": "#D4AF37",
+      "fundo_claro": "#F9F7FF",
+      "fundo_escuro": "#0D0F2E",
+      "texto_principal": "#1A1A2E",
+      "texto_claro": "#FFFFFF",
+      "acento_rosa": "#FF6B9D"
+    },
+    "tipografia": {
+      "titulo": "Playfair Display (Google Fonts) — elegante para títulos",
+      "corpo": "Poppins (Google Fonts) — moderno e legível"
+    },
+    "icones": "Font Awesome 6 (CDN)",
+    "imagens": "Usar imagens de placeholder temáticas de pets via https://place-hold.it ou https://placedog.net — com instruções de comentário no HTML indicando onde substituir por fotos reais",
+    "efeitos": [
+      "Animações suaves de entrada (fade-in, slide-up) com CSS",
+      "Hover effects nos cards de serviço",
+      "Parallax sutil no hero",
+      "Scroll suave entre seções",
+      "Efeito de brilho/shimmer no botão principal de WhatsApp"
+    ]
+  },
+  "secoes": [
+    {
+      "id": "header",
+      "nome": "Cabeçalho fixo (Sticky Navbar)",
+      "descricao": "Navbar fixa no topo com logo, links de navegação e botão de WhatsApp",
+      "conteudo": {
+        "logo": "Texto estilizado 'GALLANT' com ícone de pata, subtítulo 'Pet & Spa'",
+        "links": ["Início", "Serviços", "Sobre Nós", "Galeria", "Contato"],
+        "cta": "Agendar via WhatsApp",
+        "comportamento": "Navbar fica transparente no topo e escurece ao fazer scroll"
+      }
+    },
+    {
+      "id": "hero",
+      "nome": "Seção Hero (Início)",
+      "descricao": "Seção de destaque com fundo gradiente azul/roxo, título impactante e chamada para ação",
+      "conteudo": {
+        "titulo": "Seu pet merece o melhor! 🐾",
+        "subtitulo": "Estética, spa, cromoterapia e muito mais para o seu melhor amigo em Jacareí - SP",
+        "cta_principal": {
+          "texto": "Agendar agora pelo WhatsApp",
+          "link": "https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+agendar+um+hor%C3%A1rio%21",
+          "icone": "fa-whatsapp"
+        },
+        "cta_secundario": {
+          "texto": "Ver nossos serviços",
+          "link": "#servicos"
+        },
+        "numeros_destaque": [
+          { "numero": "942+", "label": "Seguidores no Instagram" },
+          { "numero": "159+", "label": "Posts publicados" },
+          { "numero": "100%", "label": "Amor pelos pets" }
+        ]
+      }
+    },
+    {
+      "id": "servicos",
+      "nome": "Serviços",
+      "descricao": "Grid de cards com todos os serviços oferecidos, ícones e descrição curta",
+      "conteudo": {
+        "titulo_secao": "Nossos Serviços",
+        "subtitulo_secao": "Tudo que seu pet precisa em um só lugar",
+        "lista_servicos": [
+          {
+            "nome": "Estética Animal",
+            "descricao": "Banho, tosa, hidratação e embelezamento completo para o seu pet com produtos premium.",
+            "icone": "fa-scissors",
+            "cor_destaque": "#6A0DAD"
+          },
+          {
+            "nome": "Baby Spa",
+            "descricao": "Experiência relaxante e segura especialmente desenvolvida para filhotes.",
+            "icone": "fa-baby",
+            "cor_destaque": "#FF6B9D"
+          },
+          {
+            "nome": "Spa Patas",
+            "descricao": "Tratamento completo para as patinhas: hidratação, corte de unhas e cuidados especiais.",
+            "icone": "fa-paw",
+            "cor_destaque": "#D4AF37"
+          },
+          {
+            "nome": "Cromoterapia",
+            "descricao": "Terapia com cores e luzes que promove bem-estar, equilíbrio e relaxamento para o pet.",
+            "icone": "fa-rainbow",
+            "cor_destaque": "#1B1F5E"
+          },
+          {
+            "nome": "Musicoterapia",
+            "descricao": "Ambiente com música relaxante para proporcionar uma experiência tranquila e sem estresse.",
+            "icone": "fa-music",
+            "cor_destaque": "#6A0DAD"
+          },
+          {
+            "nome": "Táxi Dog",
+            "descricao": "Serviço de transporte seguro e confortável para buscar e levar seu pet até o salão.",
+            "icone": "fa-car",
+            "cor_destaque": "#D4AF37"
+          },
+          {
+            "nome": "Rações",
+            "descricao": "Linha completa de rações premium para cães e gatos de todas as raças e tamanhos.",
+            "icone": "fa-bone",
+            "cor_destaque": "#FF6B9D"
+          },
+          {
+            "nome": "Acessórios",
+            "descricao": "Coleiras, roupinhas, brinquedos e tudo para deixar seu pet estiloso e feliz.",
+            "icone": "fa-tag",
+            "cor_destaque": "#1B1F5E"
+          },
+          {
+            "nome": "Medicamentos",
+            "descricao": "Produtos veterinários e medicamentos para a saúde e bem-estar do seu animal.",
+            "icone": "fa-pills",
+            "cor_destaque": "#6A0DAD"
+          }
+        ]
+      }
+    },
+    {
+      "id": "sobre",
+      "nome": "Sobre Nós",
+      "descricao": "Seção com a história e missão da empresa, em layout de duas colunas (texto + imagem)",
+      "conteudo": {
+        "titulo_secao": "Sobre a Gallant Pet & Spa",
+        "texto": "A Gallant Pet & Spa nasceu do amor pelos animais e do desejo de oferecer uma experiência única e diferenciada em Jacareí - SP. Somos um espaço pensado para o bem-estar do seu pet, onde cada detalhe é cuidado com carinho e profissionalismo. Nossa missão é proporcionar conforto, saúde e alegria para os seus melhores amigos, usando técnicas modernas como cromoterapia e musicoterapia para garantir que cada visita seja uma experiência relaxante e especial.",
+        "diferenciais": [
+          "Ambiente climatizado e confortável",
+          "Equipe especializada e apaixonada por pets",
+          "Técnicas inovadoras: cromoterapia e musicoterapia",
+          "Produtos premium e seguros",
+          "Atendimento personalizado para cada pet"
+        ],
+        "imagem_placeholder": "https://placedog.net/600/400?r=1 (substituir por foto real da loja)"
+      }
+    },
+    {
+      "id": "galeria",
+      "nome": "Galeria de Fotos",
+      "descricao": "Grid de fotos dos pets atendidos com efeito hover. Usar placeholders com instrução clara de substituição.",
+      "conteudo": {
+        "titulo_secao": "Nossos Clientes",
+        "subtitulo_secao": "Confira alguns dos pets mais fofos que já passaram pela Gallant! 🐾",
+        "quantidade_fotos": 9,
+        "placeholders": [
+          "https://placedog.net/400/400?r=1",
+          "https://placedog.net/400/400?r=2",
+          "https://placedog.net/400/400?r=3",
+          "https://placedog.net/400/400?r=4",
+          "https://placedog.net/400/400?r=5",
+          "https://placedog.net/400/400?r=6",
+          "https://placedog.net/400/400?r=7",
+          "https://placedog.net/400/400?r=8",
+          "https://placedog.net/400/400?r=9"
+        ],
+        "instrucao_html": "Substituir cada src de <img> pelas fotos reais dos pets atendidos (baixar do Instagram @gallantpetespa)",
+        "layout": "Grid 3x3 com hover que escurece a imagem e mostra ícone de pata centralizado"
+      }
+    },
+    {
+      "id": "contato",
+      "nome": "Contato",
+      "descricao": "Seção de contato com endereço, WhatsApp destacado, horário de funcionamento e mapa embutido",
+      "conteudo": {
+        "titulo_secao": "Fale Conosco",
+        "subtitulo_secao": "Estamos prontos para cuidar do seu melhor amigo!",
+        "endereco": "Avenida São Jorge, nº 1753 - Cidade Salvador, Jacareí - SP, 12312-000",
+        "whatsapp": "+55 (12) 98180-6712",
+        "whatsapp_link": "https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21",
+        "instagram": "@gallantpetespa",
+        "instagram_link": "https://www.instagram.com/gallantpetespa",
+        "horario": {
+          "nota": "Horário de funcionamento não informado — usar placeholder editável",
+          "placeholder": "Segunda a Sábado: 8h às 18h | Domingo: Consulte disponibilidade"
+        },
+        "mapa": {
+          "iframe_src": "https://maps.google.com/maps?q=Avenida+São+Jorge+1753+Jacareí+SP&output=embed",
+          "nota": "Embutir Google Maps via iframe com o endereço da loja"
+        }
+      }
+    },
+    {
+      "id": "footer",
+      "nome": "Rodapé",
+      "descricao": "Footer escuro com logo, links rápidos, redes sociais e créditos",
+      "conteudo": {
+        "logo": "GALLANT Pet & Spa",
+        "slogan": "Um lugar para você e para seu melhor amigo 🐾",
+        "links_rapidos": ["Início", "Serviços", "Sobre Nós", "Galeria", "Contato"],
+        "redes_sociais": [
+          { "nome": "Instagram", "icone": "fa-instagram", "link": "https://www.instagram.com/gallantpetespa" },
+          { "nome": "WhatsApp", "icone": "fa-whatsapp", "link": "https://wa.me/5512981806712" }
+        ],
+        "copyright": "© 2025 Gallant Pet & Spa. Todos os direitos reservados."
+      }
+    }
+  ],
+  "componentes_globais": {
+    "botao_whatsapp_flutuante": {
+      "descricao": "Botão verde flutuante no canto inferior direito com ícone do WhatsApp, visível em todas as seções",
+      "link": "https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21",
+      "animacao": "Pulsar suavemente para chamar atenção",
+      "tooltip": "Fale conosco!"
+    },
+    "scroll_to_top": {
+      "descricao": "Botão de voltar ao topo que aparece após o usuário rolar 300px",
+      "icone": "fa-arrow-up"
+    },
+    "responsividade": "Totalmente responsivo — mobile first. Menu hamburguer no mobile. Grid adaptável (3 colunas no desktop, 2 no tablet, 1 no mobile).",
+    "seo_basico": {
+      "title": "Gallant Pet & Spa — Estética, Spa e Bem-Estar Animal em Jacareí SP",
+      "description": "A Gallant Pet & Spa oferece banho, tosa, cromoterapia, musicoterapia, táxi dog e muito mais para o seu pet em Jacareí - SP. Agende pelo WhatsApp!",
+      "og_image": "placeholder — substituir por foto real da loja"
+    }
+  },
+  "instrucoes_tecnicas": [
+    "Criar em um único arquivo index.html com CSS e JS embutidos nas tags <style> e <script>",
+    "Usar Google Fonts CDN para Playfair Display e Poppins",
+    "Usar Font Awesome 6 CDN para ícones",
+    "NÃO usar frameworks externos (sem Bootstrap, Tailwind, React) — apenas HTML/CSS/JS puro",
+    "Código bem comentado com seções claramente identificadas por comentários HTML",
+    "Adicionar comentários HTML indicando onde substituir imagens placeholder por fotos reais",
+    "Garantir que todos os links de WhatsApp usem o formato wa.me com mensagem pré-definida",
+    "Implementar smooth scroll para links de navegação interna",
+    "Adicionar meta tags básicas de SEO e Open Graph",
+    "Testar que o menu hamburguer funciona corretamente no mobile",
+    "O site deve ter visual premium: gradientes suaves, sombras elegantes, bordas arredondadas"
+  ]
+}

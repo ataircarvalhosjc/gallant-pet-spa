@@ -1,0 +1,2463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Gallant Pet & Spa — Estética, Spa e Bem-Estar Animal em Jacareí SP</title>
+  <meta name="description" content="A Gallant Pet & Spa oferece banho, tosa, cromoterapia, musicoterapia, táxi dog e muito mais para o seu pet em Jacareí - SP. Agende pelo WhatsApp!" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Gallant Pet & Spa — Estética, Spa e Bem-Estar Animal em Jacareí SP" />
+  <meta property="og:description" content="Banho, tosa, cromoterapia, musicoterapia, táxi dog e muito mais para o seu pet em Jacareí - SP." />
+  <meta property="og:type" content="website" />
+  <!-- SUBSTITUIR: og:image — colocar URL de uma foto real da loja -->
+  <meta property="og:image" content="https://placedog.net/1200/630?r=og" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    /* =========================================
+       RESET & VARIÁVEIS
+    ========================================= */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --color-primary:   #1B1F5E;
+      --color-secondary: #6A0DAD;
+      --color-accent:    #D4AF37;
+      --color-bg-light:  #F9F7FF;
+      --color-bg-dark:   #0D0F2E;
+      --color-text:      #1A1A2E;
+      --color-white:     #FFFFFF;
+      --color-pink:      #FF6B9D;
+      --color-whatsapp:  #25D366;
+
+      --font-title: 'Playfair Display', Georgia, serif;
+      --font-body:  'Poppins', sans-serif;
+
+      --shadow-sm:  0 2px 8px rgba(27,31,94,0.10);
+      --shadow-md:  0 8px 30px rgba(27,31,94,0.15);
+      --shadow-lg:  0 20px 60px rgba(27,31,94,0.20);
+
+      --radius-sm:  8px;
+      --radius-md:  16px;
+      --radius-lg:  24px;
+      --radius-full: 9999px;
+
+      --transition: 0.3s ease;
+      --nav-height: 72px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-text);
+      background-color: var(--color-bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul { list-style: none; }
+
+    /* =========================================
+       UTILITÁRIOS
+    ========================================= */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-title);
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: #555;
+      max-width: 540px;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* =========================================
+       ANIMAÇÕES DE ENTRADA
+    ========================================= */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+    .fade-in-delay-5 { transition-delay: 0.5s; }
+
+    /* =========================================
+       BOTÕES
+    ========================================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-whatsapp), #1aa855);
+      color: var(--color-white);
+      box-shadow: 0 6px 24px rgba(37,211,102,0.40);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Shimmer effect on WhatsApp primary button */
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: rgba(255,255,255,0.25);
+      transform: skewX(-20deg);
+      animation: shimmer 2.4s infinite;
+    }
+
+    @keyframes shimmer {
+      0%   { left: -60%; }
+      100% { left: 130%; }
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.50);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--color-white);
+      border: 2px solid rgba(255,255,255,0.6);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: var(--color-white);
+    }
+
+    .btn-accent {
+      background: linear-gradient(135deg, var(--color-accent), #b8942a);
+      color: var(--color-primary);
+      font-weight: 700;
+      box-shadow: 0 6px 24px rgba(212,175,55,0.35);
+    }
+
+    .btn-accent:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(212,175,55,0.50);
+    }
+
+    /* =========================================
+       NAVBAR
+    ========================================= */
+    #header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      z-index: 1000;
+      transition: background var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+    }
+
+    #header.transparent {
+      background: transparent;
+    }
+
+    #header.scrolled {
+      background: rgba(13,15,46,0.95);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+    }
+
+    .nav-inner {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .nav-logo-img {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Nav links */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover { color: var(--color-white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--color-whatsapp), #1aa855);
+      color: var(--color-white) !important;
+      padding: 9px 20px;
+      border-radius: var(--radius-full);
+      font-weight: 600 !important;
+      font-size: 0.85rem !important;
+      box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .nav-cta::after { display: none !important; }
+    .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,211,102,0.45); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--color-white);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+
+    .nav-hamburger.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav-hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-hamburger.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* Mobile menu */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      top: var(--nav-height);
+      left: 0;
+      width: 100%;
+      background: rgba(13,15,46,0.98);
+      backdrop-filter: blur(16px);
+      padding: 24px;
+      flex-direction: column;
+      gap: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav-mobile.open { display: flex; }
+
+    .nav-mobile a {
+      color: rgba(255,255,255,0.85);
+      font-size: 1.1rem;
+      font-weight: 500;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav-mobile .nav-cta {
+      justify-content: center;
+      margin-top: 8px;
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    #inicio {
+      min-height: 100vh;
+      background: var(--color-bg-dark);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding-top: var(--nav-height);
+    }
+
+    /* Filmstrip — frames ciclados via JS */
+    .hero-filmstrip {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero-filmstrip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Overlay gradiente para legibilidade do texto */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(
+        135deg,
+        rgba(13,15,46,0.82) 0%,
+        rgba(27,31,94,0.70) 50%,
+        rgba(106,13,173,0.55) 100%
+      );
+    }
+
+    /* Parallax decorative orbs */
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-orb-1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(106,13,173,0.35) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+    }
+
+    .hero-orb-2 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(212,175,55,0.20) 0%, transparent 70%);
+      bottom: -50px;
+      left: -50px;
+    }
+
+    .hero-orb-3 {
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, rgba(255,107,157,0.25) 0%, transparent 70%);
+      top: 30%;
+      right: 15%;
+    }
+
+    /* Floating paws decoração */
+    .hero-paws {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-paw {
+      position: absolute;
+      color: rgba(255,255,255,0.04);
+      font-size: 4rem;
+      animation: floatPaw 8s ease-in-out infinite;
+    }
+
+    .hero-paw:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; font-size: 3rem; }
+    .hero-paw:nth-child(2) { top: 60%; left: 3%; animation-delay: 2s; font-size: 5rem; }
+    .hero-paw:nth-child(3) { top: 25%; right: 5%; animation-delay: 1s; font-size: 2.5rem; }
+    .hero-paw:nth-child(4) { top: 70%; right: 8%; animation-delay: 3s; font-size: 3.5rem; }
+    .hero-paw:nth-child(5) { top: 45%; left: 45%; animation-delay: 1.5s; font-size: 2rem; }
+
+    @keyframes floatPaw {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(6deg); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      padding: 60px 0;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.35);
+      color: var(--color-accent);
+      padding: 7px 16px;
+      border-radius: var(--radius-full);
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-bottom: 24px;
+    }
+
+    .hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--color-white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-title span {
+      color: var(--color-accent);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.78);
+      line-height: 1.7;
+      margin-bottom: 36px;
+      max-width: 520px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
+
+    /* Stats */
+    .hero-stats {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      text-align: center;
+    }
+
+    .hero-stat-number {
+      font-family: var(--font-title);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.6);
+      font-weight: 500;
+    }
+
+    .hero-stat-divider {
+      width: 1px;
+      height: 48px;
+      background: rgba(255,255,255,0.15);
+      align-self: center;
+    }
+
+    /* Hero image column (desktop) */
+    .hero-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .hero-image-col {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image-frame {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 4/5;
+      border-radius: 40px 8px 40px 8px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 3px solid rgba(212,175,55,0.30);
+      position: relative;
+    }
+
+    .hero-image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-badge {
+      position: absolute;
+      bottom: -16px;
+      left: -16px;
+      background: linear-gradient(135deg, var(--color-accent), #b8942a);
+      color: var(--color-primary);
+      padding: 14px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    .hero-image-badge span {
+      display: block;
+      font-size: 1.3rem;
+      font-family: var(--font-title);
+    }
+
+    /* =========================================
+       VIDEOS
+    ========================================= */
+    #videos {
+      padding: 100px 0;
+      background:
+        radial-gradient(circle at 20% 0%, rgba(212,175,55,0.10), transparent 24%),
+        radial-gradient(circle at 100% 20%, rgba(255,107,157,0.08), transparent 20%),
+        linear-gradient(180deg, #0d0f2e 0%, #111431 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #videos::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 100% 72px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    #videos .section-title {
+      color: var(--color-white);
+    }
+
+    #videos .section-subtitle {
+      color: rgba(255,255,255,0.70);
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .video-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .video-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(212,175,55,0.35);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+    }
+
+    .video-frame {
+      position: relative;
+      aspect-ratio: 9 / 16;
+      background: #050608;
+      overflow: hidden;
+    }
+
+    .video-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+
+    .video-body {
+      padding: 18px 18px 20px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .video-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .video-kicker::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--color-accent);
+      box-shadow: 0 0 0 6px rgba(212,175,55,0.10);
+    }
+
+    .video-body p {
+      color: rgba(255,255,255,0.76);
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    /* =========================================
+       SERVIÇOS
+    ========================================= */
+    #servicos {
+      padding: 100px 0;
+      background: var(--color-bg-light);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .service-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(27,31,94,0.06);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--card-accent, var(--color-secondary));
+      border-radius: 4px 0 0 4px;
+      transition: width var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(27,31,94,0.12);
+    }
+
+    .service-card:hover::before {
+      width: 6px;
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      background: var(--icon-bg, rgba(106,13,173,0.10));
+      color: var(--card-accent, var(--color-secondary));
+    }
+
+    .service-card h3 {
+      font-family: var(--font-title);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.65;
+    }
+
+    /* =========================================
+       SOBRE NÓS
+    ========================================= */
+    #sobre {
+      padding: 100px 0;
+      background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-primary) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #sobre::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .sobre-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .sobre-image-col {
+      position: relative;
+    }
+
+    .sobre-image-frame {
+      border-radius: 8px 40px 8px 40px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      border: 3px solid rgba(212,175,55,0.25);
+    }
+
+    .sobre-image-frame img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .sobre-float-badge {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      color: var(--color-white);
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.68rem;
+      font-weight: 600;
+      box-shadow: var(--shadow-md);
+      border: 3px solid var(--color-accent);
+      line-height: 1.3;
+      padding: 8px;
+    }
+
+    .sobre-float-badge i {
+      font-size: 1.4rem;
+      margin-bottom: 4px;
+      color: var(--color-accent);
+    }
+
+    .sobre-text-col .section-title {
+      color: var(--color-white);
+    }
+
+    .sobre-text {
+      color: rgba(255,255,255,0.78);
+      font-size: 0.97rem;
+      line-height: 1.8;
+      margin-bottom: 32px;
+    }
+
+    .sobre-diferenciais {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .sobre-diferencial {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+    }
+
+    .sobre-diferencial i {
+      width: 28px;
+      height: 28px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.35);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-accent);
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    /* =========================================
+       GALERIA
+    ========================================= */
+    #galeria {
+      padding: 100px 0;
+      background: var(--color-bg-light);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      aspect-ratio: 1;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    /* SUBSTITUIR: cada <img> dentro de .gallery-item pelo src da foto real do Instagram @gallantpetespa */
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(13,15,46,0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.4s ease;
+    }
+
+    .gallery-overlay i {
+      color: var(--color-white);
+      font-size: 2.2rem;
+      opacity: 0;
+      transform: scale(0.7);
+      transition: opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      background: rgba(13,15,46,0.55);
+    }
+
+    .gallery-item:hover .gallery-overlay i {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .gallery-cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .gallery-cta p {
+      color: #777;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    /* =========================================
+       PRODUTOS
+    ========================================= */
+    #produtos {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--color-bg-dark) 0%, #0f1235 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #produtos::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(106,13,173,0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* =========================================
+       VÍDEOS
+    ========================================= */
+    #videos {
+      padding: 100px 0;
+      background: var(--color-bg-light);
+    }
+
+    .videos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .video-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #000;
+    }
+
+    .video-wrap {
+      position: relative;
+      padding-bottom: 177.78%; /* 9:16 para Shorts */
+      height: 0;
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .videos-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    }
+
+    #produtos .section-title { color: var(--color-white); }
+    #produtos .section-subtitle { color: rgba(255,255,255,0.60); }
+
+    .produtos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .produto-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .produto-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+      border-color: rgba(212,175,55,0.30);
+    }
+
+    .produto-img-wrap {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .produto-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 12px;
+      transition: transform 0.5s ease;
+    }
+
+    .produto-card:hover .produto-img-wrap img {
+      transform: scale(1.06);
+    }
+
+    .produto-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
+      color: #fff;
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.05em;
+    }
+
+    .produto-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .produto-nome {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--color-white);
+      line-height: 1.3;
+    }
+
+    .produto-desc {
+      font-size: 0.80rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .produto-preco-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .produto-preco-de {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.35);
+      text-decoration: line-through;
+    }
+
+    .produto-preco {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      font-family: var(--font-title);
+    }
+
+    .produto-parcelas {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .produto-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 11px 16px;
+      background: linear-gradient(135deg, var(--color-whatsapp), #1aa855);
+      color: #fff;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+      box-shadow: 0 4px 16px rgba(37,211,102,0.30);
+    }
+
+    .produto-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.45);
+    }
+
+    @media (max-width: 1024px) {
+      .produtos-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+      .produtos-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =========================================
+       CONTATO
+    ========================================= */
+    #contato {
+      padding: 100px 0;
+      background: linear-gradient(180deg, var(--color-primary) 0%, var(--color-bg-dark) 100%);
+      position: relative;
+    }
+
+    .contato-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contato-text-col .section-title { color: var(--color-white); }
+    .contato-text-col .section-subtitle { color: rgba(255,255,255,0.65); }
+
+    .contato-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .contato-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: background var(--transition);
+    }
+
+    .contato-card:hover { background: rgba(255,255,255,0.09); }
+
+    .contato-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contato-card-icon.green  { background: rgba(37,211,102,0.15); color: var(--color-whatsapp); }
+    .contato-card-icon.purple { background: rgba(106,13,173,0.20); color: #c084fc; }
+    .contato-card-icon.gold   { background: rgba(212,175,55,0.15); color: var(--color-accent); }
+    .contato-card-icon.pink   { background: rgba(255,107,157,0.15); color: var(--color-pink); }
+
+    .contato-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .contato-card-value {
+      font-size: 0.93rem;
+      color: rgba(255,255,255,0.88);
+      line-height: 1.5;
+    }
+
+    .contato-card a.contato-card-value {
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.25);
+    }
+
+    .contato-card a.contato-card-value:hover { color: var(--color-white); }
+
+    .contato-wpp-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    /* Map column */
+    .contato-map-col {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .map-frame {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      border: 2px solid rgba(212,175,55,0.20);
+      height: 320px;
+    }
+
+    .map-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--color-accent);
+      font-size: 0.9rem;
+      font-weight: 500;
+      text-decoration: underline;
+      text-decoration-color: rgba(212,175,55,0.35);
+      transition: color var(--transition);
+    }
+
+    .map-link:hover { color: #f0d060; }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    #footer {
+      background: #060710;
+      padding: 60px 0 28px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand-logo {
+      margin-bottom: 16px;
+    }
+
+    .footer-logo-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .footer-slogan {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.88rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+    }
+
+    .footer-social {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-social.instagram {
+      background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      color: #fff;
+    }
+
+    .footer-social.whatsapp {
+      background: var(--color-whatsapp);
+      color: #fff;
+    }
+
+    .footer-social:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.3); }
+
+    .footer-col-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.55);
+      font-size: 0.88rem;
+      transition: color var(--transition);
+    }
+
+    .footer-links a:hover { color: var(--color-white); }
+
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      line-height: 1.5;
+    }
+
+    .footer-info-item i {
+      color: var(--color-accent);
+      margin-top: 2px;
+      flex-shrink: 0;
+      width: 14px;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(255,255,255,0.06);
+      margin-bottom: 24px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-copyright {
+      color: rgba(255,255,255,0.35);
+      font-size: 0.82rem;
+    }
+
+    .footer-copyright a { color: var(--color-accent); }
+
+    /* =========================================
+       FLOATING WHATSAPP BUTTON
+    ========================================= */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 58px;
+      height: 58px;
+      background: var(--color-whatsapp);
+      color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 6px 24px rgba(37,211,102,0.50);
+      z-index: 900;
+      animation: wppPulse 2.5s ease-in-out infinite;
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 10px 32px rgba(37,211,102,0.65);
+      animation: none;
+    }
+
+    .whatsapp-float-tooltip {
+      position: absolute;
+      right: 68px;
+      background: rgba(13,15,46,0.90);
+      color: var(--color-white);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      font-weight: 500;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+
+    .whatsapp-float-tooltip::after {
+      content: '';
+      position: absolute;
+      right: -6px;
+      top: 50%;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-right: none;
+      border-left-color: rgba(13,15,46,0.90);
+    }
+
+    .whatsapp-float:hover .whatsapp-float-tooltip { opacity: 1; }
+
+    @keyframes wppPulse {
+      0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.50); }
+      50%       { box-shadow: 0 6px 32px rgba(37,211,102,0.75), 0 0 0 10px rgba(37,211,102,0.12); }
+    }
+
+    /* =========================================
+       SCROLL TO TOP
+    ========================================= */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px;
+      right: 96px;
+      width: 44px;
+      height: 44px;
+      background: rgba(27,31,94,0.85);
+      color: var(--color-white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      box-shadow: var(--shadow-sm);
+      z-index: 900;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition), transform var(--transition);
+      border: none;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .scroll-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-top:hover { transform: translateY(-3px); background: var(--color-primary); }
+
+    /* =========================================
+       RESPONSIVIDADE
+    ========================================= */
+    @media (max-width: 1024px) {
+      .hero-layout { grid-template-columns: 1fr; }
+      .hero-image-col { display: none; }
+      .videos-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .sobre-layout { grid-template-columns: 1fr; gap: 40px; }
+      .sobre-image-col { order: -1; }
+      .contato-layout { grid-template-columns: 1fr; gap: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --nav-height: 64px; }
+
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-ctas { flex-direction: column; }
+      .hero-ctas .btn { justify-content: center; }
+      .hero-stats { gap: 24px; justify-content: center; }
+      .hero-stat-divider { display: none; }
+
+      .videos-grid { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+      .hero-title { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       NAVBAR FIXA
+  ========================================= -->
+  <header id="header" class="transparent">
+    <div class="container">
+      <nav class="nav-inner">
+
+        <!-- Logo -->
+        <a href="#inicio" class="nav-logo" aria-label="Gallant Pet & Spa — Início">
+          <img src="Logo/logo-GallantPet.png" alt="Gallant Pet & Spa" class="nav-logo-img" />
+        </a>
+
+        <!-- Links desktop -->
+        <ul class="nav-links" role="list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#videos">Vídeos</a></li>
+          <li><a href="#produtos">Produtos</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li>
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+agendar+um+hor%C3%A1rio%21"
+               class="nav-cta" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Agendar via WhatsApp
+            </a>
+          </li>
+        </ul>
+
+        <!-- Hamburger mobile -->
+        <button class="nav-hamburger" id="navHamburger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+
+    <!-- Menu mobile -->
+    <div class="nav-mobile" id="navMobile" role="navigation" aria-label="Menu mobile">
+      <a href="#inicio"   onclick="closeMenu()">Início</a>
+      <a href="#servicos" onclick="closeMenu()">Serviços</a>
+      <a href="#sobre"    onclick="closeMenu()">Sobre Nós</a>
+      <a href="#galeria"  onclick="closeMenu()">Galeria</a>
+      <a href="#videos"   onclick="closeMenu()">Vídeos</a>
+      <a href="#contato"  onclick="closeMenu()">Contato</a>
+      <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+agendar+um+hor%C3%A1rio%21"
+         class="nav-cta" target="_blank" rel="noopener noreferrer" onclick="closeMenu()">
+        <i class="fa-brands fa-whatsapp"></i> Agendar via WhatsApp
+      </a>
+    </div>
+  </header>
+
+
+  <!-- =========================================
+       HERO
+  ========================================= -->
+  <section id="inicio">
+
+    <!-- Filmstrip de frames (slow motion) -->
+    <div class="hero-filmstrip" aria-hidden="true">
+      <img id="heroFrame" src="imagens video/ezgif-frame-001.jpg" alt="" />
+    </div>
+    <!-- Overlay gradiente sobre o filmstrip -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Orbs de fundo -->
+    <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+    <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+
+    <!-- Patas decorativas flutuantes -->
+    <div class="hero-paws" aria-hidden="true">
+      <i class="hero-paw fa-solid fa-paw"></i>
+      <i class="hero-paw fa-solid fa-paw"></i>
+      <i class="hero-paw fa-solid fa-paw"></i>
+      <i class="hero-paw fa-solid fa-paw"></i>
+      <i class="hero-paw fa-solid fa-paw"></i>
+    </div>
+
+    <div class="container">
+      <div class="hero-layout">
+
+        <!-- Coluna de texto -->
+        <div class="hero-content fade-in">
+          <h1 class="hero-title">
+            Seu pet merece<br />
+            <span>o melhor!</span> 🐾
+          </h1>
+
+          <p class="hero-subtitle">
+            Estética, spa, cromoterapia e muito mais para o seu melhor amigo em Jacareí&nbsp;-&nbsp;SP. Cuidado com amor e profissionalismo.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+agendar+um+hor%C3%A1rio%21"
+               class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+              Agendar agora pelo WhatsApp
+            </a>
+            <a href="#servicos" class="btn btn-outline">
+              Ver nossos serviços
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-number">942+</div>
+              <div class="hero-stat-label">Seguidores no Instagram</div>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">159+</div>
+              <div class="hero-stat-label">Posts publicados</div>
+            </div>
+            <div class="hero-stat-divider" aria-hidden="true"></div>
+            <div class="hero-stat">
+              <div class="hero-stat-number">100%</div>
+              <div class="hero-stat-label">Amor pelos pets</div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       VÍDEOS
+  ========================================= -->
+  <section id="videos">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">Conteúdo real</span>
+        <h2 class="section-title">Vídeos da Gallant em ação</h2>
+        <p class="section-subtitle">
+          Shorts rápidos para mostrar a atmosfera da Gallant Pet & Spa de um jeito direto e envolvente.
+        </p>
+      </div>
+
+      <div class="videos-grid">
+
+        <article class="video-card fade-in fade-in-delay-1">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/-h7DuXLmdCg?rel=0&amp;modestbranding=1&amp;playsinline=1"
+              title="Short da Gallant Pet & Spa 1"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-body">
+            <div class="video-kicker">Short 01</div>
+            <p>Um recorte rápido para destacar a experiência da marca em formato vertical.</p>
+          </div>
+        </article>
+
+        <article class="video-card fade-in fade-in-delay-2">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/K93SQ3GEt9Y?rel=0&amp;modestbranding=1&amp;playsinline=1"
+              title="Short da Gallant Pet & Spa 2"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-body">
+            <div class="video-kicker">Short 02</div>
+            <p>Mais um vídeo para reforçar o visual do serviço e criar confiança logo na primeira rolagem.</p>
+          </div>
+        </article>
+
+        <article class="video-card fade-in fade-in-delay-3">
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/SMEbppfbtrI?rel=0&amp;modestbranding=1&amp;playsinline=1"
+              title="Short da Gallant Pet & Spa 3"
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <div class="video-body">
+            <div class="video-kicker">Short 03</div>
+            <p>Fechamento visual com conteúdo real e formato nativo para prender mais atenção.</p>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       SERVIÇOS
+  ========================================= -->
+  <section id="servicos">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">O que oferecemos</span>
+        <h2 class="section-title">Nossos Serviços</h2>
+        <p class="section-subtitle">Tudo que seu pet precisa em um só lugar</p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Estética Animal -->
+        <div class="service-card fade-in fade-in-delay-1"
+             style="--card-accent:#6A0DAD; --icon-bg:rgba(106,13,173,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-scissors"></i></div>
+          <h3>Estética Animal</h3>
+          <p>Banho, tosa, hidratação e embelezamento completo para o seu pet com produtos premium.</p>
+        </div>
+
+        <!-- Baby Spa -->
+        <div class="service-card fade-in fade-in-delay-2"
+             style="--card-accent:#FF6B9D; --icon-bg:rgba(255,107,157,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-baby"></i></div>
+          <h3>Baby Spa</h3>
+          <p>Experiência relaxante e segura especialmente desenvolvida para filhotes.</p>
+        </div>
+
+        <!-- Spa Patas -->
+        <div class="service-card fade-in fade-in-delay-3"
+             style="--card-accent:#D4AF37; --icon-bg:rgba(212,175,55,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-paw"></i></div>
+          <h3>Spa Patas</h3>
+          <p>Tratamento completo para as patinhas: hidratação, corte de unhas e cuidados especiais.</p>
+        </div>
+
+        <!-- Cromoterapia -->
+        <div class="service-card fade-in fade-in-delay-1"
+             style="--card-accent:#1B1F5E; --icon-bg:rgba(27,31,94,0.08);">
+          <div class="service-icon"><i class="fa-solid fa-rainbow"></i></div>
+          <h3>Cromoterapia</h3>
+          <p>Terapia com cores e luzes que promove bem-estar, equilíbrio e relaxamento para o pet.</p>
+        </div>
+
+        <!-- Musicoterapia -->
+        <div class="service-card fade-in fade-in-delay-2"
+             style="--card-accent:#6A0DAD; --icon-bg:rgba(106,13,173,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-music"></i></div>
+          <h3>Musicoterapia</h3>
+          <p>Ambiente com música relaxante para proporcionar uma experiência tranquila e sem estresse.</p>
+        </div>
+
+        <!-- Táxi Dog -->
+        <div class="service-card fade-in fade-in-delay-3"
+             style="--card-accent:#D4AF37; --icon-bg:rgba(212,175,55,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-car"></i></div>
+          <h3>Táxi Dog</h3>
+          <p>Serviço de transporte seguro e confortável para buscar e levar seu pet até o salão.</p>
+        </div>
+
+        <!-- Rações -->
+        <div class="service-card fade-in fade-in-delay-1"
+             style="--card-accent:#FF6B9D; --icon-bg:rgba(255,107,157,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-bone"></i></div>
+          <h3>Rações</h3>
+          <p>Linha completa de rações premium para cães e gatos de todas as raças e tamanhos.</p>
+        </div>
+
+        <!-- Acessórios -->
+        <div class="service-card fade-in fade-in-delay-2"
+             style="--card-accent:#1B1F5E; --icon-bg:rgba(27,31,94,0.08);">
+          <div class="service-icon"><i class="fa-solid fa-tag"></i></div>
+          <h3>Acessórios</h3>
+          <p>Coleiras, roupinhas, brinquedos e tudo para deixar seu pet estiloso e feliz.</p>
+        </div>
+
+        <!-- Medicamentos -->
+        <div class="service-card fade-in fade-in-delay-3"
+             style="--card-accent:#6A0DAD; --icon-bg:rgba(106,13,173,0.10);">
+          <div class="service-icon"><i class="fa-solid fa-pills"></i></div>
+          <h3>Medicamentos</h3>
+          <p>Produtos veterinários e medicamentos para a saúde e bem-estar do seu animal.</p>
+        </div>
+
+      </div><!-- /services-grid -->
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       SOBRE NÓS
+  ========================================= -->
+  <section id="sobre">
+    <div class="container">
+      <div class="sobre-layout">
+
+        <!-- Imagem -->
+        <div class="sobre-image-col fade-in">
+          <div class="sobre-image-frame">
+            <!-- SUBSTITUIR: trocar src por foto real do interior da loja ou da equipe Gallant Pet & Spa -->
+            <img src="https://placedog.net/600/420?r=sobre"
+                 alt="Interior da Gallant Pet & Spa" loading="lazy" />
+          </div>
+          <div class="sobre-float-badge">
+            <i class="fa-solid fa-heart"></i>
+            Cuidado<br />com Amor
+          </div>
+        </div>
+
+        <!-- Texto -->
+        <div class="sobre-text-col fade-in fade-in-delay-2">
+          <span class="section-label">Quem somos</span>
+          <h2 class="section-title">Sobre a Gallant<br />Pet &amp; Spa</h2>
+
+          <p class="sobre-text">
+            A Gallant Pet &amp; Spa nasceu do amor pelos animais e do desejo de oferecer uma experiência única e diferenciada em Jacareí&nbsp;-&nbsp;SP. Somos um espaço pensado para o bem-estar do seu pet, onde cada detalhe é cuidado com carinho e profissionalismo.
+          </p>
+          <p class="sobre-text">
+            Nossa missão é proporcionar conforto, saúde e alegria para os seus melhores amigos, usando técnicas modernas como cromoterapia e musicoterapia para garantir que cada visita seja uma experiência relaxante e especial.
+          </p>
+
+          <ul class="sobre-diferenciais" role="list">
+            <li class="sobre-diferencial">
+              <i class="fa-solid fa-check"></i>
+              Ambiente climatizado e confortável
+            </li>
+            <li class="sobre-diferencial">
+              <i class="fa-solid fa-check"></i>
+              Equipe especializada e apaixonada por pets
+            </li>
+            <li class="sobre-diferencial">
+              <i class="fa-solid fa-check"></i>
+              Técnicas inovadoras: cromoterapia e musicoterapia
+            </li>
+            <li class="sobre-diferencial">
+              <i class="fa-solid fa-check"></i>
+              Produtos premium e seguros
+            </li>
+            <li class="sobre-diferencial">
+              <i class="fa-solid fa-check"></i>
+              Atendimento personalizado para cada pet
+            </li>
+          </ul>
+
+          <div style="margin-top: 36px;">
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21"
+               class="btn btn-accent" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+              Fale com a gente
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       GALERIA
+  ========================================= -->
+  <section id="galeria">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">Nossos clientes</span>
+        <h2 class="section-title">Galeria de Pets 🐾</h2>
+        <p class="section-subtitle">Confira alguns dos pets mais fofos que já passaram pela Gallant!</p>
+      </div>
+
+      <div class="gallery-grid">
+
+        <!-- SUBSTITUIR: baixar fotos reais do Instagram @gallantpetespa e substituir cada src abaixo -->
+        <div class="gallery-item fade-in fade-in-delay-1">
+          <img src="https://placedog.net/400/400?r=1" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-2">
+          <img src="https://placedog.net/400/400?r=2" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-3">
+          <img src="https://placedog.net/400/400?r=3" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-1">
+          <img src="https://placedog.net/400/400?r=4" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-2">
+          <img src="https://placedog.net/400/400?r=5" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-3">
+          <img src="https://placedog.net/400/400?r=6" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-1">
+          <img src="https://placedog.net/400/400?r=7" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-2">
+          <img src="https://placedog.net/400/400?r=8" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+        <div class="gallery-item fade-in fade-in-delay-3">
+          <img src="https://placedog.net/400/400?r=9" alt="Pet atendido na Gallant" loading="lazy" />
+          <div class="gallery-overlay"><i class="fa-solid fa-paw"></i></div>
+        </div>
+
+      </div><!-- /gallery-grid -->
+
+      <div class="gallery-cta fade-in">
+        <p>Quer ver mais? Siga a gente no Instagram!</p>
+        <a href="https://www.instagram.com/gallantpetespa"
+           class="btn btn-accent" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-instagram"></i>
+          @gallantpetespa
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       VÍDEOS
+  ========================================= -->
+  <section id="videos">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">Veja na prática</span>
+        <h2 class="section-title">Nossos Pets em Ação 🎬</h2>
+        <p class="section-subtitle">Momentos reais dos pets que passaram pela Gallant</p>
+      </div>
+
+      <div class="videos-grid">
+
+        <div class="video-card fade-in fade-in-delay-1">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/-h7DuXLmdCg?rel=0&modestbranding=1"
+              title="Gallant Pet & Spa — Vídeo 1"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="video-card fade-in fade-in-delay-2">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/K93SQ3GEt9Y?rel=0&modestbranding=1"
+              title="Gallant Pet & Spa — Vídeo 2"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+        <div class="video-card fade-in fade-in-delay-3">
+          <div class="video-wrap">
+            <iframe src="https://www.youtube-nocookie.com/embed/SMEbppfbtrI?rel=0&modestbranding=1"
+              title="Gallant Pet & Spa — Vídeo 3"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       PRODUTOS
+  ========================================= -->
+  <section id="produtos">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">Loja Gallant</span>
+        <h2 class="section-title">Produtos para o seu Pet</h2>
+        <p class="section-subtitle">Acessórios premium selecionados com amor para o seu melhor amigo</p>
+      </div>
+
+      <div class="produtos-grid">
+
+        <!-- Produto 1 -->
+        <div class="produto-card fade-in fade-in-delay-1">
+          <div class="produto-img-wrap">
+            <span class="produto-badge">Mais Vendido</span>
+            <img src="produtos/D_NQ_NP_2X_730146-MLB91763357758_092025-F-kit-pet-medio-cama-europa-sanitario-comedouro-coleira-bola.webp"
+                 alt="Kit Pet Médio Completo" loading="lazy" />
+          </div>
+          <div class="produto-body">
+            <div class="produto-nome">Kit Pet Médio Completo</div>
+            <div class="produto-desc">Cama Europa, sanitário, comedouro duplo, coleira e bolinha de brinquedo. Tudo que o seu pet precisa!</div>
+            <div class="produto-preco-wrap">
+              <span class="produto-preco-de">R$ 169,90</span>
+              <span class="produto-preco">R$ 129,90</span>
+            </div>
+            <div class="produto-parcelas">ou 3x de R$ 43,30 sem juros</div>
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+o+Kit+Pet+M%C3%A9dio+Completo+por+R%24+129%2C90.+Vi+no+site%21"
+               class="produto-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-card fade-in fade-in-delay-2">
+          <div class="produto-img-wrap">
+            <span class="produto-badge">Novo</span>
+            <img src="produtos/D_NQ_NP_2X_754794-MLB97345208093_112025-F-coleira-peitoral-guia-cachorros-ces-medio-e-grande-porte.webp"
+                 alt="Peitoral + Guia Anti-choque" loading="lazy" />
+          </div>
+          <div class="produto-body">
+            <div class="produto-nome">Peitoral + Guia Anti-choque</div>
+            <div class="produto-desc">Peitoral ergonômico com alça de controle e guia com mola anti-choque para cães médio e grande porte.</div>
+            <div class="produto-preco-wrap">
+              <span class="produto-preco-de">R$ 84,90</span>
+              <span class="produto-preco">R$ 64,90</span>
+            </div>
+            <div class="produto-parcelas">ou 2x de R$ 32,45 sem juros</div>
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+o+Peitoral+%2B+Guia+Anti-choque+por+R%24+64%2C90.+Vi+no+site%21"
+               class="produto-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-card fade-in fade-in-delay-3">
+          <div class="produto-img-wrap">
+            <span class="produto-badge">Destaque</span>
+            <img src="produtos/D_NQ_NP_2X_972052-MLB102538630775_122025-F.webp"
+                 alt="Mochilinha Peitoral DUOMM" loading="lazy" />
+          </div>
+          <div class="produto-body">
+            <div class="produto-nome">Mochilinha Peitoral DUOMM</div>
+            <div class="produto-desc">Peitoral estilo mochila com guia inclusa. Disponível em 4 cores. Ideal para cães e gatos de pequeno porte.</div>
+            <div class="produto-preco-wrap">
+              <span class="produto-preco-de">R$ 119,90</span>
+              <span class="produto-preco">R$ 89,90</span>
+            </div>
+            <div class="produto-parcelas">ou 3x de R$ 29,97 sem juros</div>
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+a+Mochilinha+Peitoral+DUOMM+por+R%24+89%2C90.+Vi+no+site%21"
+               class="produto-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto-card fade-in fade-in-delay-4">
+          <div class="produto-img-wrap">
+            <img src="produtos/pet-accessories-02 (1).avif"
+                 alt="Kit Acessórios Premium" loading="lazy" />
+          </div>
+          <div class="produto-body">
+            <div class="produto-nome">Kit Acessórios Premium</div>
+            <div class="produto-desc">Kit completo de acessórios para o dia a dia do seu pet. Qualidade e estilo para quem ama seus animais.</div>
+            <div class="produto-preco-wrap">
+              <span class="produto-preco-de">R$ 69,90</span>
+              <span class="produto-preco">R$ 49,90</span>
+            </div>
+            <div class="produto-parcelas">ou 2x de R$ 24,95 sem juros</div>
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Quero+comprar+o+Kit+Acess%C3%B3rios+Premium+por+R%24+49%2C90.+Vi+no+site%21"
+               class="produto-btn" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i> Comprar via WhatsApp
+            </a>
+          </div>
+        </div>
+
+      </div><!-- /produtos-grid -->
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       CONTATO
+  ========================================= -->
+  <section id="contato">
+    <div class="container">
+
+      <div class="section-header fade-in">
+        <span class="section-label">Entre em contato</span>
+        <h2 class="section-title" style="color: var(--color-white);">Fale Conosco</h2>
+        <p class="section-subtitle" style="color: rgba(255,255,255,0.65);">
+          Estamos prontos para cuidar do seu melhor amigo!
+        </p>
+      </div>
+
+      <div class="contato-layout">
+
+        <!-- Info -->
+        <div class="contato-text-col fade-in">
+
+          <div class="contato-cards">
+
+            <div class="contato-card">
+              <div class="contato-card-icon green"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <div class="contato-card-label">WhatsApp</div>
+                <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21"
+                   class="contato-card-value" target="_blank" rel="noopener noreferrer">
+                  +55 (12) 98180-6712
+                </a>
+              </div>
+            </div>
+
+            <div class="contato-card">
+              <div class="contato-card-icon purple"><i class="fa-brands fa-instagram"></i></div>
+              <div>
+                <div class="contato-card-label">Instagram</div>
+                <a href="https://www.instagram.com/gallantpetespa"
+                   class="contato-card-value" target="_blank" rel="noopener noreferrer">
+                  @gallantpetespa
+                </a>
+              </div>
+            </div>
+
+            <div class="contato-card">
+              <div class="contato-card-icon gold"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div class="contato-card-label">Endereço</div>
+                <span class="contato-card-value">
+                  Avenida São Jorge, nº&nbsp;1753<br />
+                  Cidade Salvador, Jacareí&nbsp;-&nbsp;SP, 12312-000
+                </span>
+              </div>
+            </div>
+
+            <div class="contato-card">
+              <div class="contato-card-icon pink"><i class="fa-regular fa-clock"></i></div>
+              <div>
+                <div class="contato-card-label">Horário de Funcionamento</div>
+                <!-- SUBSTITUIR: confirmar horário real com a loja -->
+                <span class="contato-card-value">
+                  Segunda a Sábado: 8h às 18h<br />
+                  Domingo: Consulte disponibilidade
+                </span>
+              </div>
+            </div>
+
+          </div><!-- /contato-cards -->
+
+          <div class="contato-wpp-btn">
+            <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+agendar+um+hor%C3%A1rio%21"
+               class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <i class="fa-brands fa-whatsapp"></i>
+              Agendar agora pelo WhatsApp
+            </a>
+          </div>
+
+        </div><!-- /contato-text-col -->
+
+        <!-- Mapa -->
+        <div class="contato-map-col fade-in fade-in-delay-2">
+          <div class="map-frame">
+            <!-- Google Maps embutido — Avenida São Jorge 1753, Cidade Salvador, Jacareí SP -->
+            <iframe
+              src="https://maps.google.com/maps?q=Avenida+S%C3%A3o+Jorge+1753+Cid+Salvador+Jacare%C3%AD+SP&output=embed"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Localização Gallant Pet & Spa">
+            </iframe>
+          </div>
+          <a href="https://maps.google.com/?q=Avenida+São+Jorge+1753+Cidade+Salvador+Jacareí+SP"
+             class="map-link" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Abrir no Google Maps
+          </a>
+        </div>
+
+      </div><!-- /contato-layout -->
+    </div>
+  </section>
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer id="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- Marca -->
+        <div>
+          <div class="footer-brand-logo">
+            <img src="Logo/logo-GallantPet.png" alt="Gallant Pet & Spa" class="footer-logo-img" />
+          </div>
+          <p class="footer-slogan">Um lugar para você e para seu melhor amigo 🐾</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/gallantpetespa"
+               class="footer-social instagram"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram Gallant Pet & Spa">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/5512981806712"
+               class="footer-social whatsapp"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="WhatsApp Gallant Pet & Spa">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links rápidos -->
+        <div>
+          <div class="footer-col-title">Links Rápidos</div>
+          <ul class="footer-links" role="list">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#videos">Vídeos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+
+        <!-- Informações -->
+        <div>
+          <div class="footer-col-title">Informações</div>
+          <div class="footer-info">
+            <div class="footer-info-item">
+              <i class="fa-solid fa-location-dot"></i>
+              Av. São Jorge, 1753 — Cidade Salvador, Jacareí&nbsp;-&nbsp;SP
+            </div>
+            <div class="footer-info-item">
+              <i class="fa-brands fa-whatsapp"></i>
+              +55 (12) 98180-6712
+            </div>
+            <div class="footer-info-item">
+              <i class="fa-brands fa-instagram"></i>
+              @gallantpetespa
+            </div>
+            <div class="footer-info-item">
+              <i class="fa-regular fa-clock"></i>
+              Seg–Sáb: 8h às 18h
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © 2025 Gallant Pet &amp; Spa. Todos os direitos reservados.
+        </p>
+        <p class="footer-copyright">
+          Feito com <i class="fa-solid fa-heart" style="color:#FF6B9D;"></i> para os pets de Jacareí
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================================
+       BOTÃO WHATSAPP FLUTUANTE
+  ========================================= -->
+  <a href="https://wa.me/5512981806712?text=Ol%C3%A1%21+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es%21"
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="Fale conosco pelo WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+    <span class="whatsapp-float-tooltip">Fale conosco!</span>
+  </a>
+
+
+  <!-- =========================================
+       BOTÃO SCROLL TO TOP
+  ========================================= -->
+  <button class="scroll-top" id="scrollTop" aria-label="Voltar ao topo">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+  <script>
+    /* ---------- Navbar scroll ---------- */
+    const header = document.getElementById('header');
+
+    function updateNav() {
+      if (window.scrollY > 40) {
+        header.classList.remove('transparent');
+        header.classList.add('scrolled');
+      } else {
+        header.classList.add('transparent');
+        header.classList.remove('scrolled');
+      }
+    }
+
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    /* ---------- Menu hamburguer ---------- */
+    const hamburger = document.getElementById('navHamburger');
+    const navMobile = document.getElementById('navMobile');
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = navMobile.classList.toggle('open');
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    function closeMenu() {
+      navMobile.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+
+    /* ---------- Scroll to top ---------- */
+    const scrollTopBtn = document.getElementById('scrollTop');
+
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 300);
+    }, { passive: true });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    /* ---------- Animações de entrada com IntersectionObserver ---------- */
+    const fadeEls = document.querySelectorAll('.fade-in');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+
+    /* ---------- Smooth scroll para links de navegação interna ---------- */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (!target) return;
+        e.preventDefault();
+        const offset = parseInt(getComputedStyle(document.documentElement)
+          .getPropertyValue('--nav-height')) || 72;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
+
+    /* ---------- Parallax sutil no hero (patas) ---------- */
+    const heroOrbs = document.querySelectorAll('.hero-orb');
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const y = window.scrollY;
+          heroOrbs.forEach((orb, i) => {
+            const factor = (i + 1) * 0.08;
+            orb.style.transform = `translateY(${y * factor}px)`;
+          });
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    /* ---------- Hero filmstrip slow motion ---------- */
+    (function () {
+      const TOTAL    = 64;
+      const FPS      = 10;
+      const INTERVAL = 1000 / FPS;
+      const BASE     = 'imagens video/ezgif-frame-';
+
+      const frameEl = document.getElementById('heroFrame');
+      if (!frameEl) return;
+
+      // Pré-carrega todos os frames
+      const images = [];
+      for (let i = 1; i <= TOTAL; i++) {
+        const img = new Image();
+        img.src = BASE + String(i).padStart(3, '0') + '.jpg';
+        images.push(img);
+      }
+
+      let current = 0;
+      let last    = 0;
+
+      function tick(ts) {
+        if (ts - last >= INTERVAL) {
+          frameEl.src = images[current].src;
+          current = (current + 1) % TOTAL;
+          last = ts;
+        }
+        requestAnimationFrame(tick);
+      }
+
+      images[0].complete
+        ? requestAnimationFrame(tick)
+        : images[0].addEventListener('load', () => requestAnimationFrame(tick));
+    })();
+  </script>
+
+</body>
+</html>
